@@ -41,6 +41,10 @@ pipeline {
                             echo 'Executing Apply...'
                             sh "terraform apply --auto-approve"
                             break
+                        case 'destroy':
+                            echo 'Executing Destroy...'
+                            sh "terraform destroy --auto-approve"
+                    break
                         default:
                             error 'Unknown action'
                     }
